@@ -45,6 +45,10 @@ const StyledFooter = styled.div`
   .phone-number {
     font-weight: 700;
   }
+
+  .footer-legal-links {
+    font-size: 10px;
+  }
 `
 
 const Footer = () => (
@@ -60,6 +64,7 @@ const Footer = () => (
             <div className="footer-legal">
               <h4>Order Now</h4>
               <h4 className="phone-number">1.888.888.8888</h4>
+              <p className="footer-legal-links">© 2019. All rights reserved Privacy Policy  |  Terms & Conditions</p>
             </div>
           </div>
         </div>
