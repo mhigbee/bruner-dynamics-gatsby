@@ -37,6 +37,8 @@ const StyledHero = styled.div`
     display: flex;
     justify-content: center;
     font-family: 'Maven Pro', sans-serif;
+    margin-left: 20px;
+    margin-right: 20px;
 
     [name=zip-code] {
       color: ${siteColors.black};
@@ -44,6 +46,11 @@ const StyledHero = styled.div`
       border-top-left-radius: 5px;
       border-bottom-left-radius: 5px;
       border: 0;
+      width: 35%;
+
+      ${mq('medium')} {
+        width: auto;
+      }
     }
 
     [type=submit] {
@@ -54,6 +61,11 @@ const StyledHero = styled.div`
       border-top-right-radius: 5px;
       border-bottom-right-radius: 5px;
       cursor: pointer;
+      width: 65%;
+
+      ${mq('medium')} {
+        width: auto;
+      }
 
       &:hover {
         background-color: ${siteColors.blue3};
