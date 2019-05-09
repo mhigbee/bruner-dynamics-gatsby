@@ -80,6 +80,8 @@ const GlobalStyles = () => (
         color: ${siteColors.black};
         font-size: 24px;
         line-height: 30px;
+        margin-bottom: 0;
+        padding-bottom: 10px;
       }
 
       h5 {

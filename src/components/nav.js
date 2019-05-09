@@ -1,5 +1,5 @@
 // import { Link } from "gatsby"
-import PropTypes from "prop-types"
+// import PropTypes from "prop-types"
 import React from "react"
 import styled from "@emotion/styled"
 
@@ -12,7 +12,5 @@ const Nav = () => (
     li*5
   </StyledNavUl>
 )
-
-
 
 export default Nav;
