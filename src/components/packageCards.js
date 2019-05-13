@@ -19,12 +19,12 @@ const StyledPackageCards = styled.div`
     .columns {
       flex-basis: 100%;
 
-      ${mq('large')} {
-        flex-basis: 25%;
-      }
-
       ${mq('medium')} {
         flex-basis: 50%;
+      }
+
+      ${mq('large')} {
+        flex-basis: 25%;
       }
     }
   }
@@ -314,9 +314,9 @@ const PackageCards = () => (
     </ComponentStructure>
     <ComponentStructure>
       <div className="after-legal">
-        <p class="legal">*Does not include The Patriot (2000) for obvious reasons. Independence Day and Red Dawn count, but not the re-makes. Each viewing of either Rocky IV, Iron Eagle, or Top Gun will result in a $5 credit to your account which will be applied to your subsequent bill.</p>
-        <p class="legal">**Ralph can’t come on Tuesday nights. Bowling league.</p> 
-        <p class="legal">†Badminton match must be within a 45 mile radius of Ogden, UT.</p>
+        <p className="legal">*Does not include The Patriot (2000) for obvious reasons. Independence Day and Red Dawn count, but not the re-makes. Each viewing of either Rocky IV, Iron Eagle, or Top Gun will result in a $5 credit to your account which will be applied to your subsequent bill.</p>
+        <p className="legal">**Ralph can’t come on Tuesday nights. Bowling league.</p> 
+        <p className="legal">†Badminton match must be within a 45 mile radius of Ogden, UT.</p>
       </div>
     </ComponentStructure>
   </StyledPackageCards>
