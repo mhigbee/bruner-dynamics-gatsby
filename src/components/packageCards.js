@@ -14,9 +14,18 @@ const StyledPackageCards = styled.div`
 
   .column-container {
     display: flex;
+    flex-wrap: wrap;
 
     .columns {
-      flex-basis: 25%;
+      flex-basis: 100%;
+
+      ${mq('large')} {
+        flex-basis: 25%;
+      }
+
+      ${mq('medium')} {
+        flex-basis: 50%;
+      }
     }
   }
 
@@ -45,6 +54,7 @@ const StyledPackageCards = styled.div`
 
     .package-title {
       color: ${siteColors.blue1};
+      text-transform: uppercase;
       font-weight: 700;
       font-size: 12px;
     }
@@ -89,6 +99,7 @@ const StyledPackageCards = styled.div`
   .features-section {
     list-style: none;
     margin-left: 0;
+    height: 135px;
 
     li {
       padding-left: 30px;
@@ -139,6 +150,9 @@ const StyledPackageCards = styled.div`
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
     font-family: 'Maven Pro', sans-serif;
+    margin-top: auto;
+    border: none;
+    width: 100%;
 
     .button-callout {
       font-size: 16px;
@@ -147,6 +161,15 @@ const StyledPackageCards = styled.div`
     .button-phone-number {
       font-size: 18px;
       font-weight: 700;
+    }
+  }
+
+  .after-legal {
+    padding-top: 20px;
+
+    ${mq('large')} {
+      max-width: 60%;
+      margin: 0 auto;
     }
   }
 `
@@ -182,21 +205,118 @@ const PackageCards = () => (
                 <p>Included at no additional cost</p>
               </li>
             </ul>
-            <a className="package-card-button">
+            <button className="package-card-button">
               <span className="button-callout">Order the Pamantha</span>
               <span className="button-phone-number">1.888.888.8888</span>
-            </a>
+            </button>
           </div>
         </div>
         <div className="column-two columns">
-        <div className="package-card">TEST</div>
+          <div className="package-card">
+            <div className="title-section">
+              <p className="package-title">EL TEN ELEVEN</p>
+            </div>
+            <div className="price-section">
+              <span className="dollars">50</span>
+              <span className="cents">00</span>
+              <span className="per-month">/</span>
+              <span className="month">mo</span>
+            </div>
+            <p className="price-subtext">$700/mo after you’re officially rich</p>
+            <div className="colored-line-break"></div>
+            <ul className="features-section">
+              <li className="bell-symbol">
+                <p>Patriotic Media</p>
+                <p>Consume any patriotic content for free.*</p>
+              </li>
+              <li className="video-symbol">
+                <p>Jurassic Park Channel</p>
+                <p>Channel 345 plays Jurassic Park all day</p>
+              </li> 
+              <li className="hand-symbol">
+                <p>Chip Bag Service</p>
+                <p>Stubborn bag of chips? We can help.</p>
+              </li>
+            </ul>
+            <button className="package-card-button">
+              <span className="button-callout">Select El Ten Eleven</span>
+              <span className="button-phone-number">1.888.888.8888</span>
+            </button>
+          </div>
         </div>
         <div className="column-three columns">
-        <div className="package-card">TEST</div>
+         <div className="package-card">
+            <div className="title-section">
+              <p className="package-title">ST. Jimmy’s Special</p>
+            </div>
+            <div className="price-section">
+              <span className="dollars">70</span>
+              <span className="cents">00</span>
+              <span className="per-month">/</span>
+              <span className="month">mo</span>
+            </div>
+            <p className="price-subtext">$11/mo after you’ve proven worthy</p>
+            <div className="colored-line-break"></div>
+            <ul className="features-section">
+              <li className="video-symbol">
+                <p>Raft Jousting Channel</p>
+                <p>Catch all the RJA action in one place!</p>
+              </li>
+              <li className="money-symbol">
+                <p>Reptile Disease Network</p>
+                <p>Snakes with warts? Look no further</p>
+              </li>
+              <li className="bell-symbol">
+                <p>Broken Faucet Repair</p>
+                <p>Anytime day or night.**</p>
+              </li>
+            </ul>
+            <button className="package-card-button">
+              <span className="button-callout">Become Enlightened</span>
+              <span className="button-phone-number">1.888.888.8888</span>
+            </button>
+          </div>
         </div>
         <div className="column-four columns">
-          <div className="package-card">TEST</div>
+          <div className="package-card">
+            <div className="title-section">
+              <p className="package-title">Cult Hero Classic</p>
+            </div>
+            <div className="price-section">
+              <span className="dollars">100</span>
+              <span className="cents">00</span>
+              <span className="per-month">/</span>
+              <span className="month">mo</span>
+            </div>
+            <p className="price-subtext">-$1/mo after you demonstrate loyalty</p>
+            <div className="colored-line-break"></div>
+            <ul className="features-section">
+              <li className="money-symbol">
+                <p>Gaming Currency</p>
+                <p>We now accept Mario and Sonic coins.</p>
+              </li>
+              <li className="bell-symbol">
+                <p>Landline Service</p>
+                <p>Crystal clear calls to Grandma.</p>
+              </li>
+              <li className="hand-symbol">
+                <p>Shuttlecock Recovery</p>
+                <p>We will retrieve stray shuttlecocks at your next badminton match.†</p>
+              </li>
+            </ul>
+            <button className="package-card-button">
+              <span className="button-callout">Join the Cult</span>
+              <span className="button-phone-number">1.888.888.8888</span>
+            </button>
+          </div>
         </div>
+      </div>
+    </ComponentStructure>
+    <ComponentStructure>
+      <div className="after-legal">
+        <p class="legal">*Does not include The Patriot (2000) for obvious reasons. Independence Day and Red Dawn count, but not the re-makes. Each viewing of either Rocky IV, Iron Eagle, or Top Gun will result in a $5 credit to your account which will be applied to your subsequent bill.</p>
+        <p class="legal">**Ralph can’t come on Tuesday nights. Bowling league.</p> 
+        <p class="legal">†Badminton match must be within a 45 mile radius of Ogden, UT.</p>
       </div>
     </ComponentStructure>
   </StyledPackageCards>

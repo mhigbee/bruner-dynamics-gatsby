@@ -155,6 +155,12 @@ const GlobalStyles = () => (
       .text-center {
         text-align: center;
       }
+
+      .legal {
+        font-size: 10px;
+        line-height: 10px;
+        color: ${siteColors.gray4};
+      }
     `}
     />
   </React.Fragment>

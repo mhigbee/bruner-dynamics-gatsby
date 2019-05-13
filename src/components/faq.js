@@ -9,7 +9,7 @@ const StyledFAQ = styled.div`
   padding-top: 45px;
   padding-bottom: 45px;
 
-  ${mq('large')} {
+  ${mq('medium')} {
     padding-top: 70px;
     padding-bottom: 70px;
   }
