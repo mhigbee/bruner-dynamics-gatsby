@@ -3,13 +3,14 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Hero from "../components/hero";
-import SidebySide from "../components/sideBySide";
-import { siteColors } from '../components/styleVariables';
-import ThreeColumn from "../components/threeColumn";
-import CTA from "../components/cta";
-import TwoColumn from "../components/twoColumn";
+import Hero from "../components/hero"
+import SidebySide from "../components/sideBySide"
+import { siteColors } from '../components/styleVariables'
+import ThreeColumn from "../components/threeColumn"
+import CTA from "../components/cta"
+import TwoColumn from "../components/twoColumn"
 import FAQ from "../components/faq"
+import PackageCards from "../components/packageCards"
 // Image import
 import DeviceImage from "../images/bruner-device-set-600s.png"
 import SatellitleImage from "../images/satellite-cut-out-small.png"
@@ -18,6 +19,7 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <Hero/>
+    <PackageCards/>
     <SidebySide
       bgColor={siteColors.gray2} 
       imageAlt="devices"

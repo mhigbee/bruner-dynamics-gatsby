@@ -3,6 +3,7 @@ import styled from "@emotion/styled"
 import Background from "../images/backgrounds/stars-background.jpg"
 import { siteColors, mq } from './styleVariables';
 import 'typeface-source-sans-pro';
+import 'typeface-maven-pro';
 
 const StyledHero = styled.div`
   background-image: url(${Background});
