@@ -142,6 +142,7 @@ const StyledNav = styled.div`
       ${mq('medium')} {
         padding: 0 20px 0 0;
         border-top: none;
+        color: ${siteColors.white}
       }
     }
   }
