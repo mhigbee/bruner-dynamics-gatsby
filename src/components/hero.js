@@ -9,7 +9,7 @@ const StyledHero = styled.div`
   background-image: url(${Background});
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 50px;
+  padding-top: 90px;
   padding-bottom: 50px;
 
   .h1-container {
@@ -99,21 +99,23 @@ class Hero extends React.Component {
     return (
     <StyledHero>
       <div className="constraint">
-        <div className="h1-container">
-          <h1>Discover Brüner Satellite Internet Bundles</h1>
-        </div>
-        <div className="p-container">
-          <p>Jimmy B is here to make the world a better place, one connection at a time. </p>
-        </div>
-        <div>
-          <form>
-            <input type="text" pattern="[0-9]{5}" required max="99999" name="zip-code" placeholder="Enter Zip"/>
-            <input type="submit" 
-              value={
-                this.state.mediumUpScreenSize ? "Connect with the Brüner" : "See Plans!"
-              }
-            />
-          </form>
+        <div className="columns">
+          <div className="h1-container">
+            <h1>Discover Brüner Satellite Internet Bundles</h1>
+          </div>
+          <div className="p-container">
+            <p>Jimmy B is here to make the world a better place, one connection at a time. </p>
+          </div>
+          <div>
+            <form>
+              <input type="text" pattern="[0-9]{5}" required maxlength="5" name="zip-code" placeholder="Enter Zip"/>
+              <input type="submit" 
+                value={
+                  this.state.mediumUpScreenSize ? "Connect with the Brüner" : "See Plans!"
+                }
+              />
+            </form>
+          </div>
         </div>
       </div>
     </StyledHero>
