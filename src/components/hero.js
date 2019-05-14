@@ -108,7 +108,7 @@ class Hero extends React.Component {
           </div>
           <div>
             <form>
-              <input type="text" pattern="[0-9]{5}" required maxlength="5" name="zip-code" placeholder="Enter Zip"/>
+              <input type="text" pattern="[0-9]{5}" required maxLength="5" name="zip-code" placeholder="Enter Zip"/>
               <input type="submit" 
                 value={
                   this.state.mediumUpScreenSize ? "Connect with the Brüner" : "See Plans!"
