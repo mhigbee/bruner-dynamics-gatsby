@@ -43,7 +43,7 @@ const StyledHero = styled.div`
 
     [name=zip-code] {
       color: ${siteColors.black};
-      padding-left: 25px;
+      padding-left: 10px;
       border-top-left-radius: 5px;
       border-bottom-left-radius: 5px;
       border: 0;
@@ -51,6 +51,7 @@ const StyledHero = styled.div`
 
       ${mq('medium')} {
         width: auto;
+        padding-left: 25px;
       }
     }
 
