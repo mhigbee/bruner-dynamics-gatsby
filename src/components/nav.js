@@ -81,12 +81,17 @@ const StyledNav = styled.div`
 
   nav {
     flex-grow: 1;
-    display: flex;
+    display: none;
     align-items: center;
     width: 100%;
 
+    &.mobile-nav-active {
+      display: flex;
+    }
+
     ${mq('medium')} {
       width: auto;
+      display: flex;
     }
   }
 
@@ -140,7 +145,8 @@ class Nav extends React.Component {
     super(props);
 
     this.state = {
-      scrolled: false
+      scrolled: false,
+      mobileNavClicked: false
     }
   }
 
@@ -150,6 +156,12 @@ class Nav extends React.Component {
       this.setState( {scrolled: true });
     } else {
       this.setState( {scrolled: false });
+    }
+  }
+
+  handleMobileClick = () => {
+    if (window.screen.width < 641) {
+      this.setState({ mobileNavClicked : !this.state.mobileNavClicked })
     }
   }
 
@@ -165,10 +177,10 @@ class Nav extends React.Component {
     return (
     <StyledNav className={ this.state.scrolled ? 'active' : ''}>
     <div className="constraint">
-      <div className="content">
+      <div className="content" onClick={this.handleMobileClick}>
         <img className="site-logo medium-up" src={ this.state.scrolled ? BrunerColorLogo : BrunerWhiteLogo } alt="site logo"/>
         <img className="site-logo small" src={BrunerColorLogo} alt="site logo"/>
-        <nav>
+        <nav className={this.state.mobileNavClicked ? "mobile-nav-active" : "" }>
           <ul>
             <li>Plans</li>
             <li>Speeds</li>
