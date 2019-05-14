@@ -75,23 +75,50 @@ const StyledHero = styled.div`
   }
 `
 
-const Hero = () => (
-  <StyledHero>
-    <div className="constraint">
-      <div className="h1-container">
-        <h1>Discover Brüner Satellite Internet Bundles</h1>
+class Hero extends React.Component {
+  state = {
+    mediumUpScreenSize: true
+  }
+
+  heroState = () => {
+    if ((this.state.mediumUpScreenSize && window.screen.width < 641) || (!this.state.mediumUpScreenSize && window.screen.width > 641) ) {
+      this.setState( prevState => ({
+        mediumUpScreenSize: !prevState.mediumUpScreenSize
+      }))
+    }
+  }
+
+  componentDidMount () {
+    this.heroState();
+    window.addEventListener('resize', () => {
+      this.heroState()
+    })
+  }
+
+  render () {
+    return (
+    <StyledHero>
+      <div className="constraint">
+        <div className="h1-container">
+          <h1>Discover Brüner Satellite Internet Bundles</h1>
+        </div>
+        <div className="p-container">
+          <p>Jimmy B is here to make the world a better place, one connection at a time. </p>
+        </div>
+        <div>
+          <form>
+            <input type="text" pattern="[0-9]{5}" required max="99999" name="zip-code" placeholder="Enter Zip"/>
+            <input type="submit" 
+              value={
+                this.state.mediumUpScreenSize ? "Connect with the Bruner" : "See Plans!"
+              }
+            />
+          </form>
+        </div>
       </div>
-      <div className="p-container">
-        <p>Jimmy B is here to make the world a better place, one connection at a time. </p>
-      </div>
-      <div>
-        <form>
-          <input type="text" name="zip-code" placeholder="Enter Zip"/>
-          <input type="submit" value="Connect with the Bruner"/>
-        </form>
-      </div>
-    </div>
-  </StyledHero>
-)
+    </StyledHero>
+    )
+  }
+}
 
 export default Hero;
