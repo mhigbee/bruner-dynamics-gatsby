@@ -8,6 +8,47 @@ import BrunerWhiteLogo from '../images/bruner-dynamics-white-logo.png'
 import BrunerColorLogo from '../images/bruner-dynamics-color-logo.png'
 import HamburgerMenuClosed from '../images/icons/icon-hamburger-menu-closed.svg'
 
+const StyledContent = styled.div`
+  margin: 0;
+  display: flex;
+  padding: 0;
+  align-items: center;
+  flex-direction: column;
+
+  ${mq('medium')} {
+    flex-direction: row;
+    padding: 10px;
+  }
+
+  &::before {
+    content: url(${HamburgerMenuClosed});
+    position: absolute;
+    right: 15px;
+    top: 15px;
+
+    ${mq('medium')} {
+      display: none;
+    }
+  }
+
+  &.mobile-nav-active {
+    &::before {
+      content: 'X';
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      position: absolute;
+      color: ${siteColors.blue1};
+      right: 20px;
+      top: 15px;
+  
+      ${mq('medium')} {
+        display: none;
+      }
+    }
+  }
+`
+
 const StyledNav = styled.div`
   background-color: ${siteColors.white};
   position: fixed;
@@ -29,30 +70,6 @@ const StyledNav = styled.div`
 
     h4 {
       color: ${siteColors.blue1};
-    }
-  }
-
-  .content {
-    margin: 0;
-    display: flex;
-    padding: 0;
-    align-items: center;
-    flex-direction: column;
-
-    ${mq('medium')} {
-      flex-direction: row;
-      padding: 10px;
-    }
-
-    &::before {
-      content: url(${HamburgerMenuClosed});
-      position: absolute;
-      right: 15px;
-      top: 15px;
-
-      ${mq('medium')} {
-        display: none;
-      }
     }
   }
 
@@ -177,7 +194,7 @@ class Nav extends React.Component {
     return (
     <StyledNav className={ this.state.scrolled ? 'active' : ''}>
     <div className="constraint">
-      <div className="content" onClick={this.handleMobileClick}>
+      <StyledContent onClick={this.handleMobileClick} className={this.state.mobileNavClicked ? "mobile-nav-active" : "" }>
         <img className="site-logo medium-up" src={ this.state.scrolled ? BrunerColorLogo : BrunerWhiteLogo } alt="site logo"/>
         <img className="site-logo small" src={BrunerColorLogo} alt="site logo"/>
         <nav className={this.state.mobileNavClicked ? "mobile-nav-active" : "" }>
@@ -189,7 +206,7 @@ class Nav extends React.Component {
           </ul>
         </nav> 
         <h4>Call Now 1.888.888.8888</h4>
-      </div>
+      </StyledContent>
     </div>
     </StyledNav>
     )
