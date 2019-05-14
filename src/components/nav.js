@@ -125,7 +125,7 @@ const StyledNav = styled.div`
 
     ${mq('medium')} {
       padding-left: 20px;
-      ${siteColors.white};
+      color: ${siteColors.white};
       flex-direction: row;
       width: auto;
     }
@@ -142,7 +142,6 @@ const StyledNav = styled.div`
       ${mq('medium')} {
         padding: 0 20px 0 0;
         border-top: none;
-        color: ${siteColors.white}
       }
     }
   }
